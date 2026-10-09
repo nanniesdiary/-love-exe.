@@ -41,7 +41,7 @@ const eventReports=[
 ];
 function showEvent(i){document.getElementById('event-note').textContent=eventReports[i];document.querySelectorAll('.event').forEach((b,j)=>b.classList.toggle('active',i===j))}showEvent(0);
 let phase=0;const content=document.getElementById('content');const capy='<div style="text-align:center;font-size:56px">🦫👔📈</div><p class="small muted" style="text-align:center">CAPY B. · CHIEF EMOTIONAL OFFICER</p>';
-function tab(t){if(t==='capy')content.innerHTML=capy+'<h3>Quarterly Emotional Earnings</h3><p>LUV reserves: abundant. Emotional volatility: high. Risk of heartbreak: real.</p><div class="pill">“Arti, this isn’t a hedge fund. It’s a heart fund. Please trade responsibly.”</div>';else if(t==='terminal')content.innerHTML='<h3>Developer console</h3><div class="pill">$ love.exe --status<br>Connection: complicated<br>Currency: LUV ♡</div><p><input id="cmd" placeholder="Type help to list commands"></p><button onclick="run()">EXECUTE ↵</button><p id="output" class="terminal-output" aria-live="polite"></p>';else trade()}
+function tab(t){if(t==='capy')content.innerHTML=capy+'<h3>Quarterly Emotional Earnings</h3><p>LUV reserves: abundant. Emotional volatility: high. Risk of heartbreak: real.</p><div class="pill">“Arti, this isn’t a hedge fund. It’s a heart fund. Please trade responsibly.”</div>';else if(t==='terminal')content.innerHTML='<h3>Developer console</h3><div class="pill">$ love.exe --status<br>Connection: complicated<br>Currency: LUV ♡</div><p class="small muted">arti@heart-exchange:~$ Type <b>help</b> to discover commands. Some files are classified. 🦫</p><p><input id="cmd" placeholder="Type a command (try: help)"></p><button onclick="run()">EXECUTE ↵</button><p id="output" class="terminal-output" aria-live="polite"></p>';else trade()}
 function run(){
  const el=document.getElementById('cmd');const v=el.value.trim().toLowerCase();
  const commands={
@@ -50,7 +50,8 @@ function run(){
   'sudo apt install love':'Reading package lists... Done.\nResolving dependencies...\nERROR: mutual_consent_required.\nHint: Love is not a package you can force-install. ♡',
   'help':'AVAILABLE COMMANDS\nwhoami\ngit status\nsudo apt install love\nsudo restore --relationship\ni love you\nhelp',
   'sudo restore --relationship':'✓ love.exe installed. ERROR: mutual_consent_required ♡ — Can’t sudo someone’s heart.',
-  'i love you':'ERROR 404: Feelings never deleted. 💜'
+  'i love you':'ERROR 404: Feelings never deleted. 💜',
+  'cat /heart/readme.md':'# HEART REPOSITORY ♡\nSome feelings cannot be removed with git reset.\nNo force pushes. No guaranteed merges.\nJust two humans, a few green candles, and one very suspicious capybara. 🦫'
  };
  document.getElementById('output').textContent=commands[v]||'Command not recognized. Type help for available commands.';
 }
